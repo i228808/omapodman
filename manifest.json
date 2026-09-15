@@ -1,0 +1,79 @@
+{
+  "schemaVersion": 1,
+  "id": "abdullahmansoor.omapodman",
+  "name": "OmaPodman",
+  "version": "0.1.0",
+  "author": "Abdullah Mansoor",
+  "license": "MIT",
+  "description": "Podman in the Omarchy bar: containers, images, volumes and networks on four tabs. Live CPU and memory, start/stop/restart, logs and a shell without a terminal, and one keystroke to reclaim whatever nothing is using.",
+  "homepage": "https://github.com/abdullahmansoor/omapodman",
+  "kinds": [
+    "bar-widget"
+  ],
+  "entryPoints": {
+    "barWidget": "Panel.qml"
+  },
+  "barWidget": {
+    "displayName": "OmaPodman",
+    "description": "Four tabs — containers grouped by Compose project with live CPU and memory, plus images, volumes and networks sorted biggest-first with the unused ones on top and a prune button that says what it is about to delete. Driven from the keyboard: 1-4 or h/l jump between tabs, j/k move, enter starts or stops, o tails the logs, s opens a shell, r restarts, x removes, p prunes, c copies, / filters, u refreshes, d opens podman-tui, and ? lists the lot inside the panel.",
+    "category": "System",
+    "allowMultiple": false,
+    "defaultSection": "right",
+    "defaults": {
+      "refreshIntervalSec": 15,
+      "defaultTab": "Containers",
+      "showStopped": true,
+      "showStats": true,
+      "showVolumeSizes": true,
+      "hideWhenEmpty": false
+    },
+    "schema": [
+      {
+        "key": "refreshIntervalSec",
+        "type": "integer",
+        "label": "Refresh interval (seconds)",
+        "description": "How often the bar glyph re-reads Podman. The panel refreshes every 3 seconds while it is open, regardless of this.",
+        "min": 5,
+        "max": 600,
+        "step": 5,
+        "defaultValue": 15
+      },
+      {
+        "key": "defaultTab",
+        "type": "enum",
+        "label": "Tab the panel opens on",
+        "description": "Where the panel lands every time it opens. Press 1-4, or h and l, to move between tabs once it is open.",
+        "options": ["Containers", "Images", "Volumes", "Networks"],
+        "defaultValue": "Containers"
+      },
+      {
+        "key": "showStopped",
+        "type": "boolean",
+        "label": "Show stopped containers",
+        "description": "Off lists only running containers, which keeps the panel short on a machine with a long history of one-off runs.",
+        "defaultValue": true
+      },
+      {
+        "key": "showStats",
+        "type": "boolean",
+        "label": "Show CPU and memory",
+        "description": "Off skips the podman stats call entirely. Worth turning off on a laptop: sampling every running container costs about a second of work each time the panel is open.",
+        "defaultValue": true
+      },
+      {
+        "key": "showVolumeSizes",
+        "type": "boolean",
+        "label": "Measure what each volume costs",
+        "description": "Asks Podman to walk every volume on disk, which takes a second or two on a busy machine. Off keeps the volume list instant and leaves the per-volume sizes blank; the reclaimable total in the footer still works either way.",
+        "defaultValue": true
+      },
+      {
+        "key": "hideWhenEmpty",
+        "type": "boolean",
+        "label": "Hide the bar icon when there are no containers",
+        "description": "On removes the button from the bar until Podman has something to show.",
+        "defaultValue": false
+      }
+    ]
+  }
+}
