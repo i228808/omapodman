@@ -88,6 +88,16 @@ Then add it to your bar layout, either via `~/.config/omarchy/shell.json` or the
 omarchy bar move abdullahmansoor.omapodman --section right
 ```
 
+## Removal
+
+```bash
+omarchy plugin remove abdullahmansoor.omapodman
+```
+
+This disables the widget and deletes `~/.config/omarchy/plugins/abdullahmansoor.omapodman`.
+It touches nothing outside that directory — no host config, and no containers, images,
+volumes or networks it was showing.
+
 ## Requirements
 
 - [Podman](https://podman.io/docs/installation), running rootless. Podman needs no daemon
