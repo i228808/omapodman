@@ -6,7 +6,7 @@
   "author": "Abdullah Mansoor",
   "license": "MIT",
   "description": "Podman in the Omarchy bar: containers, images, volumes and networks on four tabs. Live CPU and memory, start/stop/restart, logs and a shell without a terminal, and one keystroke to reclaim whatever nothing is using.",
-  "homepage": "https://github.com/abdullahmansoor/omapodman",
+  "homepage": "https://github.com/i228808/omapodman",
   "kinds": [
     "bar-widget"
   ],

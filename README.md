@@ -79,7 +79,7 @@ what their tooltips say, and a project header starts or stops the whole project.
 ## Installation
 
 ```bash
-omarchy plugin add https://github.com/abdullahmansoor/omapodman
+omarchy plugin add https://github.com/i228808/omapodman
 ```
 
 Then add it to your bar layout, either via `~/.config/omarchy/shell.json` or the CLI:
@@ -150,7 +150,7 @@ A couple of things are genuinely different rather than merely reformatted:
 Clone into your Omarchy plugins directory and the shell picks it up:
 
 ```bash
-git clone https://github.com/abdullahmansoor/omapodman ~/.config/omarchy/plugins/abdullahmansoor.omapodman
+git clone https://github.com/i228808/omapodman ~/.config/omarchy/plugins/abdullahmansoor.omapodman
 ```
 
 Everything that is not drawing is in `Model.js` — parsing Podman's output, deciding what is
